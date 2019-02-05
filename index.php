@@ -12,7 +12,7 @@
     <link href="bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
 
-    <title>Accueil - Android</title>
+    <title>Accueil - NXP Home</title>
 
 
   </head>

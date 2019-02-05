@@ -14,7 +14,7 @@
     <link href="navbar-fixed-top.css" rel="stylesheet">
     <link href="style_form.css" rel="stylesheet">
 
-    <title>Accueil - Android</title>
+    <title>Inscription - NXP Home</title>
 
 
   </head>
