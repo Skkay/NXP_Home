@@ -40,13 +40,13 @@
 
           <div>
             <label>Mot de passe : </label>
-            <input type="text" name="password"/>
+            <input type="password" name="password"/>
             <p></p>
           </div>
 
           <div>
             <label>Confirmer le mot de passe : </label>
-            <input type="text" name="confirm_password"/>
+            <input type="password" name="confirm_password"/>
             <p></p>
           </div>
 
