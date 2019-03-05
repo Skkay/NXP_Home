@@ -22,7 +22,7 @@
 
   <body>
 
-    <?php include("fixe/navigation_bar.php"); ?>
+    <?php include("fix/navigation_bar.php"); ?>
 
     <div class="container">
 
