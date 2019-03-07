@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -33,8 +36,18 @@
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="inscription.php">Inscription</a></li>
-    <li><a href="connexion.php">Connexion</a></li>
+    <?php
+      if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+      {
+        echo "<li><a href=\"#\">" . $_SESSION['pseudo'] . "</a></li>";
+        echo "<li><a href=\"deconnexion.php\">Deconnexion</a></li>";
+      }
+      else 
+      {
+        echo "<li><a href=\"inscription.php\">Inscription</a></li>";
+        echo "<li><a href=\"connexion.php\">Connexion</a></li>";
+      }
+    ?>
   </ul>
 
 </div>
