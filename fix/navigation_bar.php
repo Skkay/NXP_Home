@@ -33,7 +33,7 @@
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="/test/php_site/inscription.php">Inscription</a></li>
+    <li><a href="inscription.php">Inscription</a></li>
     <li><a href="">Connexion</a></li>
   </ul>
 
