@@ -85,7 +85,7 @@ if ($valide_pseudo == true AND $valide_email == true AND $password == $confirm_p
 	"email" => $email
 	));
 	ChromePhp::log("Affichage : Inscription validé");
-	include("_valide.php");
+	include("_inscription_successful.php");
 }
 
 
