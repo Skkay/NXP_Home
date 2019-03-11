@@ -33,8 +33,8 @@
         <form method="post" action="ajout_media_submit.php">
 
           <div class="form-group">
-            <label for="inputMedia">Type de média : </label>
-            <select id="inputMedia" class="form-control" name="media_type">
+            <label>Type de média : </label>
+            <select class="form-control" name="media_type">
               <option value="0" selected>Type du média</option>
               <option value="1">Vidéo</option>
               <option value="2">Audio</option>
