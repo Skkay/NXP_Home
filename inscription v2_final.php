@@ -67,32 +67,25 @@ $bdd_email -> closeCursor();
 
 if ($valide_pseudo == false OR $valide_email == false OR $password != $confirm_password) {
 	ChromePhp::log("Affichage : PSEUDO ou EMAIL invalide");
-	include("_exist_debut.php");
+	include("_inscription_failed_debut.php");
 	if ($password != $confirm_password) {
-		include("_password_diff.php");
+		echo "<p>Le mot de passe ne correspond pas à la confirmation.</p>";
 	}
 	if ($valide_pseudo == false) {
-		include("_exist_pseudo.php");
+		
+		echo "<p>Pseudo déjà associé à un compte.</p>";
 	}
 	if ($valide_email == false) {
-		include("_exist_mail.php");
+		
+		echo "<p>Adresse mail déjà associé à un compte.</p>";
 	}
-	include("_exist_fin.php");
+	include("_inscription_failed_fin.php");
 }
 
 
 // 	AJOUT DANS LA BDD
 if ($valide_pseudo == true AND $valide_email == true AND $password == $confirm_password) {
 	ChromePhp::log("Ajout dans BDD");
-	/*
-	$req = $bdd -> prepare("INSERT INTO utilisateur(identifiantUtilisateur, motDePasseUtilisateur, adresseMailUtilisateur) VALUES(:identifiantUtilisateur, :motDePasseUtilisateur, :adresseMailUtilisateur)");
-	
-	$req -> execute(array(
-	"identifiantUtilisateur" => $pseudo,
-	"motDePasseUtilisateur" => password_hash($password, PASSWORD_DEFAULT),
-	"adresseMailUtilisateur" => $email		
-	));
-	*/
 	$req = $bdd->prepare("
 		INSERT INTO utilisateur(
 		nomUtilisateur, 
@@ -117,7 +110,9 @@ if ($valide_pseudo == true AND $valide_email == true AND $password == $confirm_p
 		:ville, 
 		:civilite, 
 		:dateInscription, 
-		:email)");
+		:email)"
+	);
+	ChromePhp::log($bdd->errorInfo());
 	
 	$req->execute(array(
 		"nom" => $nom,
