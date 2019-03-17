@@ -32,7 +32,7 @@
       <hr class="my-4">
 
       <!-- DEBUT FORMULAIRE INSCRIPTION -->
-      <form method="post" action="inscription_final.php">
+      <form method="post" action="inscription_finale.php">
 
         <!-- Identifiant / Email -->
         <div class="form-row">
