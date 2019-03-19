@@ -53,19 +53,19 @@
           -->
 
           <p>
-            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Support technique</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Support BDD</button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Support Client</button>
+            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Service support 1</a>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Service support 2</button>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Service support 3</button>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Map</button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2 multiCollapseExample3 multiCollapseExample4">All support</button>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2 multiCollapseExample3 multiCollapseExample4">Tout afficher</button>
           </p>
 
           <div class="row">
             <div class="col">
               <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <div class="card card-body">
-                  <p><strong>Support technique : </strong><p>
-                    <p style = "line-height: 9px">Téléphone : 06.42.68.16.68<</p>
+                  <p><strong>Service support 1 : </strong><p>
+                    <p style = "line-height: 9px">Téléphone : 06.42.68.16.68</p>
                     <p style = "line-height: 9px">email : 
                       <a href="mailto:thomas.bonneau64@gmail.com">thomas.bonneau64@gmail.com</a>
                     </p>
@@ -75,7 +75,7 @@
               <div class="col">
                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                   <div class="card card-body">
-                    <p><strong>Base de donnée : </strong><p>
+                    <p><strong>Service support 2 : </strong><p>
                       <p style = "line-height: 9px">Téléphone : 06.12.29.02.55</p>
                       <p style = "line-height: 9px">email : 
                         <a href="mailto:emilie.parison@gmail.com">emilie.parison@gmail.com</a>
@@ -86,7 +86,7 @@
                 <div class="col">
                   <div class="collapse multi-collapse" id="multiCollapseExample3">
                     <div class="card card-body">
-                      <p><strong>Divers : </strong><p>
+                      <p><strong>Service support 3 : </strong><p>
                         <p style = "line-height: 9px">Téléphone : 07.66.12.00.53</p>
                         <p style = "line-height: 9px">email : 
                           <a href="mailto:aaron.baf@gmail.com">aaron.baf@gmail.com</a>
