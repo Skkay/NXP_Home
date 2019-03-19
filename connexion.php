@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <link rel="icon" href="../../favicon.ico">
-    <link href="bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
-    <link href="style_form.css" rel="stylesheet">
+  <link rel="icon" href="../../favicon.ico">
+  <link href="bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="navbar-fixed-top.css" rel="stylesheet">
+  <link href="style_form.css" rel="stylesheet">
 
-    <title>Connexion - NXP Home</title>
-
-
-  </head>
+  <title>Connexion - NXP Home</title>
 
 
-  <body>
+</head>
 
-    <?php include("fix/navigation_bar.php"); ?>
 
-    <div class="container">
+<body>
 
-      <div class="jumbotron">
-        <h1 id="JQcolor">Connexion</h1>
-        <p>Médiathèque en ligne</p>
+  <?php include("fix/navigation_bar.php"); ?>
 
-        <form method="post" action="connexion_final.php">
+  <div class="container">
 
-          <div>
-            <label>Pseudo : </label>
-            <input type="text" name="pseudo"/>
-            <p></p>
+    <div class="jumbotron">
+      <h1 id="JQcolor">Connexion</h1>
+      <p>Médiathèque en ligne</p>
+      <hr class="my-4">
+
+      <form method="post" action="connexion_finale.php">
+
+
+          <div class="form-group">
+            <label>Identifiant</label>
+            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo">
           </div>
+        
 
-          <div>
-            <label>Mot de passe : </label>
-            <input type="password" name="password"/>
-            <p></p>
+        
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" placeholder="Mot de passe" name="password">
           </div>
+        
 
-          <input type="submit" value="Valider"/>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Valider</button>
 
-        </form>
-
-      </div>
+      </form>
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  </div>
 
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+
+</body>
 </html>
