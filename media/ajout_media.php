@@ -13,6 +13,16 @@
 
   <title>Ajouter un media - NXP Home</title>
 
+  <script>
+      function countChar(val) {
+        var len = val.value.length;
+        if (len >= 1001) {
+          val.value = val.value.substring(0, 1001);
+        } else {
+          $('#charNum').text(1000 - len);
+        }
+      };
+    </script>
 
 </head>
 
@@ -52,15 +62,56 @@
         <p>Ajouter une vidéo :</p>
 
         <form method="post" action="">
-          <div class="form-row">
-            <label>Titre</label>
-            <input type="text" class="form-control" placeholder="Tire de la vidéo" name="titre">
 
-            <label>URL</label>
-            <input type="text" class="form-control" placeholder="URL vers la vidéo" name="URL">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Titre</label>
+              <input type="text" class="form-control" placeholder="Tire de la vidéo" name="titre" required="true">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Titre Version Original</label>
+              <input type="text" class="form-control" placeholder="Titre de la version original de la vidéo" name="titre_vo">
+            </div>
+            <div class="form-group col-md-2">
+              <label>Langue</label>
+              <!-- https://fr.m.wikipedia.org/wiki/Mod%C3%A8le:Code_langue -->
+              <select class="form-control" name="lang">
+                  <option value="fr" selected="">Français</option>
+                  <option value="en">Anglais</option>
+                  <option value="de">Allemand</option>
+                  <option value="es">Espagnol</option>
+              </select>            
+            </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Date de sortie en France</label>
+              <input type="date" class="form-control" placeholder="Date de sortie en France" name="date_fr">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Date de sortie original</label>
+              <input type="date" class="form-control" placeholder="Date de sortie original" name="date_vo">
+            </div>
+            <div class="form-group col-md-2">
+              <label>Durée</label>
+              <input type="time" class="form-control" placeholder="Durée" name="duree">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Résumé</label>
+              <textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)"></textarea>
+              <!-- <small id="charNum" class="form-text text-muted">1000</small> -->
+              <p id="charNum" class="text-right">1000</p>
+            </div>
+          </div>
+
           <br>
+
           <button type="submit" class="btn btn-primary">Suivant</button>
+
         </form>
 
       <!-- AJOUTER UN AUDIO-->

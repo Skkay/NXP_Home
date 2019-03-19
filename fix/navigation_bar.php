@@ -23,7 +23,7 @@ session_start();
 <div id="navbar" class="navbar-collapse collapse">
 
   <ul class="nav navbar-nav">
-    <li><a href="index.php">Accueil</a></li>
+    <li><a href="/NXP_Home/index.php">Accueil</a></li>
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
 
@@ -41,12 +41,12 @@ session_start();
       if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
       {
         echo "<li><a href=\"#\">" . $_SESSION['pseudo'] . "</a></li>";
-        echo "<li><a href=\"deconnexion.php\">Deconnexion</a></li>";
+        echo "<li><a href=\"/NXP_Home/deconnexion.php\">Deconnexion</a></li>";
       }
       else 
       {
-        echo "<li><a href=\"inscription.php\">Inscription</a></li>";
-        echo "<li><a href=\"connexion.php\">Connexion</a></li>";
+        echo "<li><a href=\"/NXP_Home/inscription.php\">Inscription</a></li>";
+        echo "<li><a href=\"/NXP_Home/connexion.php\">Connexion</a></li>";
       }
     ?>
   </ul>

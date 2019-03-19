@@ -2599,6 +2599,17 @@ fieldset[disabled] .form-control {
 textarea.form-control {
   height: auto;
 }
+.noresize {
+  resize: none; 
+}
+
+.vresize {
+  resize: vertical; 
+}
+  
+.hresize {
+  resize: horizontal;  
+}  
 input[type="search"] {
   -webkit-appearance: none;
 }
