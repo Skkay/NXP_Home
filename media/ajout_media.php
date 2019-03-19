@@ -22,6 +22,10 @@
           $('#charNum').text(1000 - len);
         }
       };
+
+      function test() {
+        alert("Hello! I am an alert box!");
+      };
     </script>
 
 </head>
@@ -39,11 +43,11 @@
       <p></p>
 
 
-      <form method="get" action="">
+      <form id="form_type_media" method="get" action="">
 
         <div class="form-group">
           <label>Type de média : </label>
-          <select class="form-control" name="media_type">
+          <select class="form-control" name="media_type" onchange="form_type_media.submit();">
             <option value="0" <?php if (!empty($_GET) && $_GET["media_type"] == "0") {echo "selected"; } ?> >Type du média</option>
             <option value="1" <?php if (!empty($_GET) && $_GET["media_type"] == "1") {echo "selected"; } ?> >Vidéo</option>
             <option value="2" <?php if (!empty($_GET) && $_GET["media_type"] == "2") {echo "selected"; } ?> >Audio</option>
@@ -51,7 +55,7 @@
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Suivant</button>
+        <!-- <button type="submit" class="btn btn-primary">Suivant</button> -->
 
       </form>
 
