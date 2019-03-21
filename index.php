@@ -27,6 +27,7 @@
 
         <h1 id="JQcolor">NXP Home</h1>
         <p>Médiathèque en ligne</p>
+        <hr class="my-4">
         <p></p>
 
       </div>

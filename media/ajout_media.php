@@ -40,6 +40,7 @@
 
 			<h1 id="JQcolor">NXP Home</h1>
 			<p>Ajouter un média</p>
+			<hr class="my-4">
 			<p></p>
 
 

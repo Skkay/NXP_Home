@@ -12,7 +12,7 @@
   <link href="bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
   <link href="navbar-fixed-top.css" rel="stylesheet">
 
-  <title>Contact</title>
+  <title>Contact - NXP Home</title>
 
 
 </head>
@@ -27,8 +27,9 @@
 
       <h1 id="JQcolor">Contactez-nous</h1>
       <p>Médiathèque en ligne</p>
+      <hr class="my-4">
 
-      <p style = "color :#00b386">Nos équipes Support sont disponibles de 9h à 18h du lundi au vendredi.</p>
+      <p style = "color :#1F9181">Nos équipes Support sont disponibles de 9h à 18h du lundi au vendredi.</p>
       <!--
       <p><strong>Support technique : </strong><p>
         <p style = "line-height: 9px">Téléphone : 06.42.68.16.68</p>
@@ -100,7 +101,7 @@
                         <p><strong>Siège social </strong><p>
                           <p style = "line-height: 9px">2 rue, Horizon vert</p>
                           <p style = "line-height: 9px">37170 Chambray-lès-Tours</p>
-                          <a href =" https://www.google.fr/maps/place/Lycee+sainte+marguerite/@47.3461495,0.7194182,17z/data=!4m5!3m4!1s0x47fcd6fa5eb820c1:0x4fa67fadf78edd5a!8m2!3d47.3462113!4d0.7213172">
+                          <a target="_blank" href =" https://www.google.fr/maps/place/Lycee+sainte+marguerite/@47.3461495,0.7194182,17z/data=!4m5!3m4!1s0x47fcd6fa5eb820c1:0x4fa67fadf78edd5a!8m2!3d47.3462113!4d0.7213172">
                             <img src = "map.png" style="width:300px;height:250px;"/>
                           </a>
                         </div>
