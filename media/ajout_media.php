@@ -123,7 +123,7 @@
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label>Titre</label>
-								<input type="text" class="form-control" placeholder="Tire de l'audio" name="titre" required="true">
+								<input type="text" class="form-control" placeholder="Titre de l'audio" name="titre" required="true">
 							</div>
 							<div class="form-group col-md-4">
 								<label>Date de sortie</label>
@@ -142,17 +142,24 @@
 					<?php elseif (!empty($_GET) && $_GET["media_type"] == "3"): ?>
 						<p>Ajouter un livre :</p>
 
-						<form method="post" action="">
-							<div class="form-row">
+						<form id="form_ajout_livre" method="post" action="">
+						<div class="form-row">
+							<div class="form-group col-md-6">
 								<label>Titre</label>
-								<input type="text" class="form-control" placeholder="Tire du livre" name="titre">
-
-								<label>URL</label>
-								<input type="text" class="form-control" placeholder="URL vers le livre" name="URL">
+								<input type="text" class="form-control" placeholder="Titre du livre" name="titre" required="true">
 							</div>
-							<br>
-							<button type="submit" class="btn btn-primary">Suivant</button>
-						</form>
+							<div class="form-group col-md-3">
+								<label>Édition</label>
+								<input type="text" class="form-control" placeholder="Édition du livre" name="edition">
+							</div>
+							<div class="form-group col-md-3">
+								<label>Page</label>
+								<input type="number" class="form-control" placeholder="Nombre de page" name="nb_page">
+							</div>
+						</div>
+						<br>						
+						<button type="submit" class="btn btn-primary">Suivant</button>
+					</form>
 
 					<?php endif ?>
 
