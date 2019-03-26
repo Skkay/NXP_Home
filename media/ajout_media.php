@@ -143,7 +143,7 @@
 					<?php elseif (!empty($_GET) && $_GET["media_type"] == "3"): ?>
 						<p>Ajouter un livre :</p>
 
-						<form id="form_ajout_livre" method="post" action="">
+						<form id="form_ajout_livre" method="post" action="ajout_livre_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label>Titre</label>
