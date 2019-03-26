@@ -38,7 +38,7 @@ if ($valide_titre == true) {
 $bdd_titre->closeCursor();
 // -----
 
-/*
+
 // Titre VO
 ChromePhp::log("VERIFICATION TITRE VO");
 $bdd_titre_vo = $bdd->query("SELECT titreVOOeuvreVideo FROM oeuvrevideo WHERE titreVOOeuvreVideo LIKE '$titre_vo'");
@@ -51,7 +51,7 @@ if ($valide_titre_vo == true) {
 }
 $bdd_titre_vo->closeCursor();
 // -----
-*/
+
 
 if ($valide_titre == false) {
 	ChromePhp::log("Affichage : Titre invalide");
