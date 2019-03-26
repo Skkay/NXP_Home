@@ -66,7 +66,7 @@
 			<?php if (!empty($_GET) && $_GET["media_type"] == "1"): ?>
 				<p>Ajouter une vidéo :</p>
 
-				<form method="post" action="">
+				<form method="post" action="ajout_video_submit.php">
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
@@ -107,7 +107,7 @@
 					<div class="form-row">
 						<div class="form-group col-md-12">
 							<label>Résumé</label>
-							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)"></textarea>
+							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)" name="resume"></textarea>
 							<!-- <small id="charNum" class="form-text text-muted">1000</small> -->
 							<p id="charNum" class="text-right">1000</p>
 						</div>
