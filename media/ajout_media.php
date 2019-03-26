@@ -120,7 +120,7 @@
 				<?php elseif (!empty($_GET) && $_GET["media_type"] == "2"): ?>
 					<p>Ajouter un audio :</p>
 
-					<form id="form_ajout_audio" method="post" action="">
+					<form id="form_ajout_audio" method="post" action="ajout_audio_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label>Titre</label>
