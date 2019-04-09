@@ -32,7 +32,7 @@
 
 
 <body>
-	<?php include("../fix/navigation_bar.php"); ?>
+	<?php include("../static/navigation_bar.php"); ?>
 
 	<div class="container">
 
