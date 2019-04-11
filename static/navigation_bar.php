@@ -28,9 +28,8 @@ session_start();
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
 
           <ul class="dropdown-menu">
-            <li><a href="#1">1</a></li>
-            <li><a href="#2">2</a></li>
-            <li><a href="#3">3</a></li>
+            <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
+            <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
           </ul>
 
         </li>
