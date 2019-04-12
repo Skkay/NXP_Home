@@ -30,6 +30,7 @@ session_start();
           <ul class="dropdown-menu">
             <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
             <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
+            <li><a href="/NXP_Home/media/les_audios.php">Les audios</a></li>
           </ul>
 
         </li>
