@@ -29,9 +29,7 @@
         <div class="tabbable">
 
           <div class="nav col-md-3" style="overflow-y:scroll; height:68vh">
-            <a href="#a" class="list-group-item" data-toggle="tab">One</a>
-            <a href="#b" class="list-group-item" data-toggle="tab">Two</a>
-            <a href="#c" class="list-group-item" data-toggle="tab">Twee</a>
+            <a href="#exemple" class="list-group-item" data-toggle="tab">Exemple</a>
 
             <?php
             include("../chromephp-master/ChromePhp.php"); 
@@ -47,7 +45,7 @@
               ChromePhp::log("Connexion BDD : error");
             }
 
-            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo FROM oeuvrevideo");
+            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo FROM oeuvrevideo ORDER BY titreOeuvreVideo");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
@@ -62,18 +60,37 @@
           </div>
 
           <div class="jumbotron tab-content col-md-9" style="overflow-y:scroll; height:68vh; background-color:white">
-            <div class="tab-pane" id="a">A</div>
-            <div class="tab-pane" id="b">B</div>
-            <div class="tab-pane" id="c">C</div>
+            <div class="tab-pane" id="exemple">
+            	<h3>Titre Video (Titre VO)</h3>
+            	description
+            	<br><br>
+            	<b><u>Langue</u> : </b>fr
+            	<br>
+            	<b><u>Durée</u> : </b>00:00
+            	<br>
+            	<b><u>Date de sortie française</u> : </b>aaaa-mm-jj
+            	<br>
+            	<b><u>Date de sortie originale</u> : </b>aaaa-mm-jj
+            	<br><br>
+            	<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>
+
+
+            </div>
 
             <?php
-            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo, titreVOOeuvreVideo, resumeOeuvreVideo FROM oeuvrevideo");
+            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo, titreVOOeuvreVideo, resumeOeuvreVideo, langueOeuvreVideo, dureeOeuvreVideo, dateSortieFROeuvreVideo, dateSortieVOOeuvreVideo FROM oeuvrevideo");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
-                echo '<div class="tab-pane" id="'.$row["idOeuvreVideo"].'">'
-                .'<h3>'.$row["titreOeuvreVideo"].' ('.$row["titreVOOeuvreVideo"].') '.'</h3>'
-                .$row["resumeOeuvreVideo"]
+                echo '
+                <div class="tab-pane" id="'.$row["idOeuvreVideo"].'">'
+	                .'<h3>'.$row["titreOeuvreVideo"].' ('.$row["titreVOOeuvreVideo"].') '.'</h3>'
+	                .$row["resumeOeuvreVideo"].'<br><br>'
+	                .'<b><u>Langue</u> : </b>'.$row["langueOeuvreVideo"].'<br>'
+	                .'<b><u>Durée</u> : </b>'.$row["dureeOeuvreVideo"].'<br>'
+	                .'<b><u>Date de sortie française</u> : </b>'.$row["dateSortieFROeuvreVideo"].'<br>'
+	                .'<b><u>Date de sortie originale</u> : </b>'.$row["dateSortieVOOeuvreVideo"].'<br><br>'
+	                .'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'
                 .'</div>';
               }
             }
