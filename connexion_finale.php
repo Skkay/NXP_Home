@@ -5,7 +5,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_test;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -13,13 +13,13 @@ catch (Excpetion $e) {
 
 ChromePhp::log("Recherche dans BDD");
 $pseudo = $_POST["pseudo"];
-$req = $bdd->prepare("SELECT id, password FROM nxp WHERE pseudo = :pseudo");
+$req = $bdd->prepare("SELECT idUtilisateur, identifiantUtilisateur, motDePasseUtilisateur FROM utilisateur WHERE identifiantUtilisateur = :pseudo");
 $req->execute(array(
 	"pseudo" => $pseudo));
 $resultat = $req->fetch();
 
 ChromePhp::log("Verifie correspondance mot de passe");
-$isPasswordCorrect = password_verify($_POST["password"], $resultat["password"]);
+$isPasswordCorrect = password_verify($_POST["password"], $resultat["motDePasseUtilisateur"]);
 
 if (!$resultat) {
 	ChromePhp::warn("Pseudo ou mot de passe incorrect");
@@ -28,7 +28,7 @@ if (!$resultat) {
 else {
 	if ($isPasswordCorrect) {
 		session_start();
-		$_SESSION["id"] = $resultat["id"];
+		$_SESSION["id"] = $resultat["idUtilisateur"];
 		$_SESSION["pseudo"] = $pseudo;
 		ChromePhp::log("Connecté");
 		ChromePhp::log($_SESSION);
