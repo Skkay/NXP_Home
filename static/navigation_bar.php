@@ -31,6 +31,7 @@ session_start();
             <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
             <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
             <li><a href="/NXP_Home/media/les_audios.php">Les audios</a></li>
+            <li><a href="/NXP_Home/media/les_livres.php">Les livres</a></li>
           </ul>
 
         </li>
