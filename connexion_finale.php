@@ -5,7 +5,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_test;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
