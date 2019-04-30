@@ -24,17 +24,16 @@ session_start();
 
       <ul class="nav navbar-nav">
         <li><a href="/NXP_Home/index.php">Accueil</a></li>
+        <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les médias<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
             <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
             <li><a href="/NXP_Home/media/les_audios.php">Les audios</a></li>
             <li><a href="/NXP_Home/media/les_livres.php">Les livres</a></li>
           </ul>
-
         </li>
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
