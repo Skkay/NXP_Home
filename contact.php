@@ -84,7 +84,7 @@
                 <p><strong>Service support 2 : </strong><p>
                   <p style = "line-height: 9px">Téléphone : 06.12.29.02.55</p>
                   <p style = "line-height: 9px">email : 
-                    <a href="mailto:emilie.parison@gmail.com">emilie.parison@gmail.com</a>
+                    <a href="mailto:emilie.parison@gmail.com">emilieparison09@gmail.com</a>
                   </p>
                 </div>
               </div>
