@@ -53,12 +53,11 @@ $bdd_titre_vo->closeCursor();
 // -----
 
 
-if ($valide_titre == false) {
-	ChromePhp::log("Affichage : Titre invalide");
+if ($valide_titre == false OR $valide_titre_vo == false) {
+	ChromePhp::log("Affichage : Titre invalide ET/OU Titre original invalide");
+	include("_submit_video_failed.php");
 }
-if ($valide_titre_vo == false) {
-	ChromePhp::log("Affichage : Titre VO invalide");
-}
+
 
 // AJOUT DANS LA BDD
 ChromePhp::log($titre);
@@ -102,6 +101,7 @@ if ($valide_titre == true AND $valide_titre_vo == true) {
 		"date_fr" => $date_fr
 	)) or die(print_r($req->errorInfo(), TRUE));
 	ChromePhp::log("Affichage : Ajout dans BDD validé");
+	include("_submit_video_successful.php");
 }
 
 ?>

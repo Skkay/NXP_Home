@@ -34,6 +34,7 @@ $bdd_titre->closeCursor();
 
 if ($valide_titre == false) {
 	ChromePhp::log("Affichage : Titre invalide");
+	include("_submit_livre_failed.php");
 }
 
 // AJOUT DANS LA BDD
@@ -57,6 +58,7 @@ if ($valide_titre == true) {
 		"nb_page" => $nb_page
 	)) or die(print_r($req->errorInfo(), TRUE));
 	ChromePhp::log("Affichage : Ajout dans BDD validé");
+	include("_submit_livre_successful.php");
 }
 
 ?>
