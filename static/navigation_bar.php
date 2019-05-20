@@ -14,7 +14,7 @@ session_start();
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#">NXP Home</a>
+      <a class="navbar-brand" href="/NXP_Home/index.php">NXP Home</a>
 
     </div>
 
@@ -23,8 +23,6 @@ session_start();
     <div id="navbar" class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav">
-        <li><a href="/NXP_Home/index.php">Accueil</a></li>
-        <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un nouveau média</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les médias<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -33,10 +31,13 @@ session_start();
             <li><a href="/NXP_Home/media/les_livres.php">Les livres</a></li>
           </ul>
         </li>
+        <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un média</a></li>
+        
 
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="/NXP_Home/contact.php">Contact</a></li>
         <?php
         if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
         {
