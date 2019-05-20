@@ -38,7 +38,7 @@
           ?>
             <ul class="list-group">
               <li class="list-group-item"><b>Pseudo : </b> <?php echo $_SESSION["pseudo"]; ?></li>
-              <li class="list-group-item"><b>Email : </b> <?php echo $_SESSION["email"]; ?></li>
+              <li class="list-group-item"><b>Email : </b> <?php echo $_SESSION["email"]; ?> <a href="nouveau-mail.php">Modifier</a></li>
               <li class="list-group-item"><b>Mot de passe : </b> <a href="nouveau-mot-de-passe.php">Modifier</a></li>
               <li class="list-group-item"><b>Nom : </b> <?php echo $_SESSION["nom"]; ?></li>
               <li class="list-group-item"><b>Prénom : </b> <?php echo $_SESSION["prenom"]; ?></li>
