@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -38,10 +37,11 @@ session_start();
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/NXP_Home/contact.php">Contact</a></li>
+        <li><a>|</a></li>
         <?php
         if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
         {
-          echo "<li><a href=\"#\">" . $_SESSION['pseudo'] . "</a></li>";
+          echo "<li><a href=\"/NXP_Home/profil.php\">" . $_SESSION['pseudo'] . "</a></li>";
           echo "<li><a href=\"/NXP_Home/deconnexion.php\">Deconnexion</a></li>";
         }
         else 
