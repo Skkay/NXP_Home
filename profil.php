@@ -45,7 +45,7 @@
               <li class="list-group-item"><b>Date de naissance : </b> <?php echo $_SESSION["ddn"]; ?></li>
               <li class="list-group-item"><b>Adresse : </b> <?php echo $_SESSION["adresse"]; ?> <a href="nouvelle-adresse.php">Modifier</a></li>
               <li class="list-group-item"><b>Code postal : </b> <?php echo $_SESSION["code_postal"]; ?> <a href="nouveau-code-postal.php">Modifier</a></li>
-              <li class="list-group-item"><b>Ville : </b> <?php echo $_SESSION["ville"]; ?></li>
+              <li class="list-group-item"><b>Ville : </b> <?php echo $_SESSION["ville"]; ?> <a href="nouvelle-ville.php">Modifier</a></li>
               <li class="list-group-item"><b>Civilité : </b> <?php echo $_SESSION["civilite"]; ?></li>
             </ul>
           <?php
