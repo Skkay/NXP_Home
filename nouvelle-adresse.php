@@ -25,7 +25,7 @@ session_start();
 
       <div class="jumbotron">
 
-        <h1 id="JQcolor"><button type="button" class="btn btn-primary" onclick="back()"><</button> Changer de pseudo :</h1>
+        <h1 id="JQcolor"><button type="button" class="btn btn-primary" onclick="back()"><</button> Changer d'adresse :</h1>
         <hr class="my-4">
         <?php
         if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
