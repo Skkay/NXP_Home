@@ -37,43 +37,43 @@
         <!-- Identifiant / Email -->
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label>Identifiant</label>
-            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo">
+            <label>Identifiant *</label>
+            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo" required="true">
           </div>
           <div class="form-group col-md-6">
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <label>Email *</label>
+            <input type="email" class="form-control" placeholder="Email" name="email" required="true">
           </div>
         </div>
 
         <!-- Mot de passe / Confirmation mot de passe -->
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label>Mot de passe</label>
-            <input type="password" class="form-control" placeholder="Mot de passe" name="password">
+            <label>Mot de passe *</label>
+            <input type="password" class="form-control" placeholder="Mot de passe" name="password" required="true">
           </div>
 
           <div class="form-group col-md-6">
-            <label>Confirmer le mot de passe</label>
-            <input type="password" class="form-control" placeholder="Confirmer le mot de passe" name="confirm_password">
+            <label>Confirmer le mot de passe *</label>
+            <input type="password" class="form-control" placeholder="Confirmer le mot de passe" name="confirm_password" required="true">
           </div>
         </div>
 
         <!-- Nom / Prenom / Date de naissance / Civilité -->
         <div class="form-row">
           <div class="form-group col-md-3">
-            <label>Prénom</label>
-            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+            <label>Prénom *</label>
+            <input type="text" class="form-control" placeholder="Prénom" name="prenom" required="true">
           </div>
 
           <div class="form-group col-md-3">
-            <label>Nom</label>
-            <input type="text" class="form-control" placeholder="Nom" name="nom">
+            <label>Nom *</label>
+            <input type="text" class="form-control" placeholder="Nom" name="nom" required="true">
           </div>
 
           <div class="form-group col-md-3">
-            <label>Date de naissance</label>
-            <input type="date" class="form-control" placeholder="Date de naissance" name="ddn">
+            <label>Date de naissance *</label>
+            <input type="date" class="form-control" placeholder="Date de naissance" name="ddn" required="true">
           </div>
 
           <div class="form-group col-md-3">
@@ -87,8 +87,8 @@
               <label>2</label>
             </div>
           -->
-          <label>Civilité</label>
-          <select class="form-control" name="civilite">
+          <label>Civilité *</label>
+          <select class="form-control" name="civilite" required="true">
             <option value="ND" selected="">Non-définie</option>
             <option value="Homme">Homme</option>
             <option value="Femme">Femme</option>
@@ -100,18 +100,18 @@
       <!-- Adresse / Ville / Code postal -->
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label>Adresse</label>
-          <input type="text" class="form-control" placeholder="Adresse" name="adresse">
+          <label>Adresse *</label>
+          <input type="text" class="form-control" placeholder="Adresse" name="adresse" required="true">
         </div>
 
         <div class="form-group col-md-4">
-          <label>Ville</label>
-          <input type="text" class="form-control" placeholder="Ville" name="ville">
+          <label>Ville *</label>
+          <input type="text" class="form-control" placeholder="Ville" name="ville" required="true">
         </div>
 
         <div class="form-group col-md-2">
-          <label>Code postal</label>
-          <input type="text" class="form-control" placeholder="Code postal" name="code_postal">
+          <label>Code postal *</label>
+          <input type="number" class="form-control" placeholder="Code postal" name="code_postal" required="true" min="10000" max="9999999">
         </div>      
       </div>
 

@@ -35,15 +35,15 @@
 
 
           <div class="form-group">
-            <label>Identifiant</label>
-            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo">
+            <label>Identifiant *</label>
+            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo" required="true">
           </div>
         
 
         
           <div class="form-group">
-            <label>Mot de passe</label>
-            <input type="password" class="form-control" placeholder="Mot de passe" name="password">
+            <label>Mot de passe *</label>
+            <input type="password" class="form-control" placeholder="Mot de passe" name="password" required="true">
           </div>
         
 

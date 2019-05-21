@@ -70,7 +70,7 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Titre</label>
+							<label>Titre *</label>
 							<input type="text" class="form-control" placeholder="Tire de la vidéo" name="titre" required="true">
 						</div>
 						<div class="form-group col-md-4">
@@ -78,9 +78,9 @@
 							<input type="text" class="form-control" placeholder="Titre de la version original de la vidéo" name="titre_vo">
 						</div>
 						<div class="form-group col-md-2">
-							<label>Langue</label>
+							<label>Langue *</label>
 							<!-- https://fr.m.wikipedia.org/wiki/Mod%C3%A8le:Code_langue -->
-							<select class="form-control" name="lang">
+							<select class="form-control" name="lang" required="true">
 								<option value="fr" selected="">Français</option>
 								<option value="en">Anglais</option>
 								<option value="de">Allemand</option>
@@ -91,23 +91,23 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Date de sortie en France</label>
-							<input type="date" class="form-control" placeholder="Date de sortie en France" name="date_fr">
+							<label>Date de sortie en France *</label>
+							<input type="date" class="form-control" placeholder="Date de sortie en France" name="date_fr" required="true">
 						</div>
 						<div class="form-group col-md-4">
 							<label>Date de sortie original</label>
 							<input type="date" class="form-control" placeholder="Date de sortie original" name="date_vo">
 						</div>
 						<div class="form-group col-md-2">
-							<label>Durée</label>
-							<input type="time" class="form-control" placeholder="Durée" name="duree">
+							<label>Durée *</label>
+							<input type="time" class="form-control" placeholder="Durée" name="duree" required="true">
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<label>Résumé</label>
-							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)" name="resume"></textarea>
+							<label>Résumé *</label>
+							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)" name="resume" required="true"></textarea>
 							<!-- <small id="charNum" class="form-text text-muted">1000</small> -->
 							<p id="charNum" class="text-right">1000</p>
 						</div>
@@ -123,16 +123,16 @@
 					<form id="form_ajout_audio" method="post" action="ajout_audio_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Titre</label>
+								<label>Titre *</label>
 								<input type="text" class="form-control" placeholder="Titre de l'audio" name="titre" required="true">
 							</div>
 							<div class="form-group col-md-4">
-								<label>Date de sortie</label>
-								<input type="date" class="form-control" placeholder="Date de sortie de l'audio" name="date">
+								<label>Date de sortie *</label>
+								<input type="date" class="form-control" placeholder="Date de sortie de l'audio" name="date" required="true">
 							</div>
 							<div class="form-group col-md-2">
-								<label>Durée</label>
-								<input type="time" class="form-control" placeholder="Durée" name="duree">
+								<label>Durée *</label>
+								<input type="time" class="form-control" placeholder="Durée" name="duree" required="true">
 							</div>
 						</div>
 						<br>						
@@ -146,7 +146,7 @@
 						<form id="form_ajout_livre" method="post" action="ajout_livre_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Titre</label>
+								<label>Titre *</label>
 								<input type="text" class="form-control" placeholder="Titre du livre" name="titre" required="true">
 							</div>
 							<div class="form-group col-md-3">
