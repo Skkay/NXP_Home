@@ -27,7 +27,7 @@
 
         <h1 id="JQcolor">Ajout validé</h1>
         <p>L'audio a été ajoutée.</p>
-        <button onclick="window.location.href = 'index.php';" type="button" class="btn btn-success btn-lg">Accueil</button>
+        <button onclick="window.location.href = 'ajout_media.php';" type="button" class="btn btn-success btn-lg">Retour à la page d'ajout</button>
         
         <p></p>
 
