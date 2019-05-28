@@ -98,7 +98,8 @@
 	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
 	                .'<b><u>Date de sortie française</u> : </b>'.$row["dateSortieFROeuvreVideo"].'<br>'
 	                .'<b><u>Date de sortie originale</u> : </b>'.$row["dateSortieVOOeuvreVideo"].'<br><br>'
-	                .'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'
+	                //.'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'
+	                .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?id='.$row["idOeuvreVideo"].'\';">Ajouter à mes vidéos</button>'
                 .'</div>';
               }
             }
