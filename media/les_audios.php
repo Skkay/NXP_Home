@@ -24,7 +24,7 @@
     <div class="jumbotron">
       <div class="row">
 
-        <h3>Vidéos</h3>
+        <h3>Audios</h3>
 
         <div class="tabbable">
 
@@ -73,14 +73,22 @@
             </div>
 
             <?php
+            function seconds_to_hhmmss($seconds) {
+              $t = round($seconds);
+              return sprintf("%02d:%02d:%02d", ($t/3600),($t/60%60), $t%60);
+            }
+
             $bdd_videos = $bdd->query("SELECT idOeuvreAudio, titreOeuvreAudio, dateSortieOeuvreAudio, duréeOeuvreAudio FROM oeuvreaudio");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
+
+                $hhmmss = seconds_to_hhmmss($row["duréeOeuvreAudio"]);
+
                 echo '
                 <div class="tab-pane" id="'.$row["idOeuvreAudio"].'">'
 	                .'<h3>'.$row["titreOeuvreAudio"].'</h3><br><br>'
-	                .'<b><u>Durée</u> : </b>'.$row["duréeOeuvreAudio"].'<br>'
+	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
 	                .'<b><u>Date de sortie</u> : </b>'.$row["dateSortieOeuvreAudio"].'<br><br>'
 	                .'<button type="submit" class="btn btn-primary">Ajouter à mes audios</button>'
                 .'</div>';

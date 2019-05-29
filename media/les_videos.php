@@ -78,16 +78,24 @@
             </div>
 
             <?php
+            function seconds_to_hhmmss($seconds) {
+              $t = round($seconds);
+              return sprintf("%02d:%02d:%02d", ($t/3600),($t/60%60), $t%60);
+            }
+
             $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo, titreVOOeuvreVideo, resumeOeuvreVideo, langueOeuvreVideo, dureeOeuvreVideo, dateSortieFROeuvreVideo, dateSortieVOOeuvreVideo FROM oeuvrevideo");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
+
+                $hhmmss = seconds_to_hhmmss($row["dureeOeuvreVideo"]);
+
                 echo '
                 <div class="tab-pane" id="'.$row["idOeuvreVideo"].'">'
 	                .'<h3>'.$row["titreOeuvreVideo"].' ('.$row["titreVOOeuvreVideo"].') '.'</h3>'
 	                .$row["resumeOeuvreVideo"].'<br><br>'
 	                .'<b><u>Langue</u> : </b>'.$row["langueOeuvreVideo"].'<br>'
-	                .'<b><u>Durée</u> : </b>'.$row["dureeOeuvreVideo"].'<br>'
+	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
 	                .'<b><u>Date de sortie française</u> : </b>'.$row["dateSortieFROeuvreVideo"].'<br>'
 	                .'<b><u>Date de sortie originale</u> : </b>'.$row["dateSortieVOOeuvreVideo"].'<br><br>'
 	                .'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'

@@ -10,6 +10,11 @@
 
 	<link href="../bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="../navbar-fixed-top.css" rel="stylesheet">
+	<link rel="stylesheet" href="../bootstrap-duration-picker.css">
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  	<script src="../bootstrap-duration-picker.js"></script>
 
 	<title>Ajouter un media - NXP Home</title>
 
@@ -70,17 +75,17 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Titre</label>
+							<label>Titre *</label>
 							<input type="text" class="form-control" placeholder="Tire de la vidéo" name="titre" required="true">
 						</div>
 						<div class="form-group col-md-4">
-							<label>Titre Version Original</label>
-							<input type="text" class="form-control" placeholder="Titre de la version original de la vidéo" name="titre_vo">
+							<label>Titre Version Original *</label>
+							<input type="text" class="form-control" placeholder="Titre de la version original de la vidéo" name="titre_vo" required="true">
 						</div>
 						<div class="form-group col-md-2">
-							<label>Langue</label>
+							<label>Langue *</label>
 							<!-- https://fr.m.wikipedia.org/wiki/Mod%C3%A8le:Code_langue -->
-							<select class="form-control" name="lang">
+							<select class="form-control" name="lang" required="true">
 								<option value="fr" selected="">Français</option>
 								<option value="en">Anglais</option>
 								<option value="de">Allemand</option>
@@ -91,23 +96,26 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Date de sortie en France</label>
-							<input type="date" class="form-control" placeholder="Date de sortie en France" name="date_fr">
+							<label>Date de sortie en France *</label>
+							<input type="date" class="form-control" placeholder="Date de sortie en France" name="date_fr" required="true">
 						</div>
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-3">
 							<label>Date de sortie original</label>
 							<input type="date" class="form-control" placeholder="Date de sortie original" name="date_vo">
 						</div>
-						<div class="form-group col-md-2">
-							<label>Durée</label>
-							<input type="time" class="form-control" placeholder="Durée" name="duree">
-						</div>
+
+						<!-- BOOTSTRAP DURATION PICKER -->
+						<div class="form-group col-md-3">
+			          		<label>Durée</label>
+			          		<input type="text" class="form-control" id="duration-video" name="duree" value="0" required="true">
+		        		</div>
+
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<label>Résumé</label>
-							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)" name="resume"></textarea>
+							<label>Résumé *</label>
+							<textarea class="form-control vresize" placeholder="Résumé de la vidéo" rows="10" maxlength="1000" oninput="countChar(this)" name="resume" required="true"></textarea>
 							<!-- <small id="charNum" class="form-text text-muted">1000</small> -->
 							<p id="charNum" class="text-right">1000</p>
 						</div>
@@ -123,17 +131,20 @@
 					<form id="form_ajout_audio" method="post" action="ajout_audio_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Titre</label>
+								<label>Titre *</label>
 								<input type="text" class="form-control" placeholder="Titre de l'audio" name="titre" required="true">
 							</div>
-							<div class="form-group col-md-4">
-								<label>Date de sortie</label>
-								<input type="date" class="form-control" placeholder="Date de sortie de l'audio" name="date">
+							<div class="form-group col-md-3">
+								<label>Date de sortie *</label>
+								<input type="date" class="form-control" placeholder="Date de sortie de l'audio" name="date" required="true">
 							</div>
-							<div class="form-group col-md-2">
-								<label>Durée</label>
-								<input type="time" class="form-control" placeholder="Durée" name="duree">
-							</div>
+
+							<!-- BOOTSTRAP DURATION PICKER -->
+							<div class="form-group col-md-3">
+				          		<label>Durée</label>
+				          		<input type="text" class="form-control" id="duration-audio" name="duree" value="0" required="true">
+		        			</div>
+
 						</div>
 						<br>						
 						<button type="submit" class="btn btn-primary">Suivant</button>
@@ -146,7 +157,7 @@
 						<form id="form_ajout_livre" method="post" action="ajout_livre_submit.php">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Titre</label>
+								<label>Titre *</label>
 								<input type="text" class="form-control" placeholder="Titre du livre" name="titre" required="true">
 							</div>
 							<div class="form-group col-md-3">
@@ -163,13 +174,60 @@
 					</form>
 
 					<?php endif ?>
+					<!-- <p>Seconds: <span id="duration-label-video"></span></p> -->
+					<!-- <p>Seconds: <span id="duration-label-audio"></span></p> -->
 
 				</div>
 
 			</div>
 
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-			<script src="../bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+			<script>
+				$(function () 
+				{
+					// VIDEO
+					$("#duration-video").durationPicker(
+					{
+						translations: {
+					        day: "jour",
+					        hour: "heure",
+					        minute: "minute",
+					        second: "seconde",
+					        days: "jours",
+					        hours: "heures",
+					        minutes: "minutes",
+					        seconds: "secondes",
+					    },
+						showDays: false,
+						showSeconds: true,
+						onChanged: function (newVal) 
+						{
+							$("#duration-label-video").text(newVal);
+						}
+					});
+
+
+					// AUDIO
+					$("#duration-audio").durationPicker(
+					{
+						translations: {
+					        day: "jour",
+					        hour: "heure",
+					        minute: "minute",
+					        second: "seconde",
+					        days: "jours",
+					        hours: "heures",
+					        minutes: "minutes",
+					        seconds: "secondes",
+					    },
+						showDays: false,
+						showSeconds: true,
+						onChanged: function (newVal) 
+						{
+							$("#duration-label-audio").text(newVal);
+						}
+					});
+				});
+			</script>
 
 		</body>
-		</html>
+	</html>
