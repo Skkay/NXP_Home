@@ -5,7 +5,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -27,7 +27,7 @@ $valide_titre_vo = true;
 // VERIFICATION SI EXISTE DEJA
 // Titre
 ChromePhp::log("VERIFICATION TITRE");
-$bdd_titre = $bdd->query("SELECT titreOeuvreVideo FROM oeuvrevideo WHERE titreOeuvreVideo LIKE '$titre'");
+$bdd_titre = $bdd->query("SELECT titre_video FROM video WHERE titre_video LIKE '$titre'");
 while($array_titre = $bdd_titre->fetch()) {
 	$valide_titre = false;
 	ChromePhp::warn("Titre Existant");
@@ -41,7 +41,7 @@ $bdd_titre->closeCursor();
 
 // Titre VO
 ChromePhp::log("VERIFICATION TITRE VO");
-$bdd_titre_vo = $bdd->query("SELECT titreVOOeuvreVideo FROM oeuvrevideo WHERE titreVOOeuvreVideo LIKE '$titre_vo'");
+$bdd_titre_vo = $bdd->query("SELECT titre_video_vo FROM video WHERE titre_video_vo LIKE '$titre_vo'");
 while($array_titre_vo = $bdd_titre_vo->fetch()) {
 	$valide_titre_vo = false;
 	ChromePhp::warn("Titre VO Existant");
@@ -72,14 +72,14 @@ ChromePhp::log($resume);
 if ($valide_titre == true AND $valide_titre_vo == true) {
 	ChromePhp::log("Ajout dans BDD");
 	$req = $bdd->prepare("
-		INSERT INTO oeuvrevideo(
-		titreOeuvreVideo,
-		titreVOOeuvreVideo,
-		resumeOeuvreVideo,
-		langueOeuvreVideo,
-		dureeOeuvreVideo,
-		dateSortieVOOeuvreVideo,
-		dateSortieFROeuvreVideo)
+		INSERT INTO video(
+		titre_video,
+		titre_video_vo,
+		resume_video,
+		langue_video,
+		duree_video,
+		date_sortie_video_vo,
+		date_sortie_video)
 		VALUES(
 		:titre,
 		:titre_vo,

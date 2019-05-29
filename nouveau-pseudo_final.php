@@ -7,7 +7,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -19,11 +19,11 @@ $valide_pseudo = true;
 
 $req = $bdd->prepare("
 	SELECT
-	idUtilisateur,
-	identifiantUtilisateur
+	id_utilisateur,
+	pseudo_utilisateur
 	FROM utilisateur
 	WHERE
-	idUtilisateur = :id_user
+	id_utilisateur = :id_user
 ");
 
 $req->execute(array(
@@ -36,7 +36,7 @@ ChromePhp::log($resultat);
 // VERIFICATION SI EXISTE DEJA :
 // Pseudo
 ChromePhp::log("VERIFICATION PSEUDO");
-$bdd_pseudo = $bdd -> query("SELECT identifiantUtilisateur FROM utilisateur WHERE identifiantUtilisateur LIKE '$pseudo'");
+$bdd_pseudo = $bdd -> query("SELECT pseudo_utilisateur FROM utilisateur WHERE pseudo_utilisateur LIKE '$pseudo'");
 while($array_pseudo = $bdd_pseudo -> fetch()) {
 	$valide_pseudo = false;
 	ChromePhp::warn("Pseudo existant");
@@ -58,8 +58,8 @@ else
 	{
 		$req = $bdd->prepare("
 			UPDATE utilisateur
-			SET identifiantUtilisateur = :new_pseudo
-			WHERE idUtilisateur = :id_user
+			SET pseudo_utilisateur = :new_pseudo
+			WHERE id_utilisateur = :id_user
 		");
 		ChromePhp::log($bdd->errorInfo());
 

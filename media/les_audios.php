@@ -38,18 +38,18 @@
             // Connexion à la BDD
             try {
               ChromePhp::log("Connexion BDD");
-              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
             }
             catch (Excpetion $e) {
               die("Erreur : " . $e -> getMessage());
               ChromePhp::log("Connexion BDD : error");
             }
 
-            $bdd_videos = $bdd->query("SELECT idOeuvreAudio, titreOeuvreAudio FROM oeuvreaudio ORDER BY titreOeuvreAudio");
+            $bdd_videos = $bdd->query("SELECT id_audio, titre_audio FROM audio ORDER BY titre_audio");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
-                echo '<a href="#'.$row["idOeuvreAudio"].'" class="list-group-item" data-toggle="tab">'.$row["titreOeuvreAudio"].'</a>';
+                echo '<a href="#'.$row["id_audio"].'" class="list-group-item" data-toggle="tab">'.$row["titre_audio"].'</a>';
               }
             }
             else {
@@ -78,18 +78,18 @@
               return sprintf("%02d:%02d:%02d", ($t/3600),($t/60%60), $t%60);
             }
 
-            $bdd_videos = $bdd->query("SELECT idOeuvreAudio, titreOeuvreAudio, dateSortieOeuvreAudio, duréeOeuvreAudio FROM oeuvreaudio");
+            $bdd_videos = $bdd->query("SELECT id_audio, titre_audio, date_sortie_audio, duree_audio FROM audio");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
 
-                $hhmmss = seconds_to_hhmmss($row["duréeOeuvreAudio"]);
+                $hhmmss = seconds_to_hhmmss($row["duree_audio"]);
 
                 echo '
-                <div class="tab-pane" id="'.$row["idOeuvreAudio"].'">'
-	                .'<h3>'.$row["titreOeuvreAudio"].'</h3><br><br>'
+                <div class="tab-pane" id="'.$row["id_audio"].'">'
+	                .'<h3>'.$row["titre_audio"].'</h3><br><br>'
 	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
-	                .'<b><u>Date de sortie</u> : </b>'.$row["dateSortieOeuvreAudio"].'<br><br>'
+	                .'<b><u>Date de sortie</u> : </b>'.$row["date_sortie_audio"].'<br><br>'
 	                .'<button type="submit" class="btn btn-primary">Ajouter à mes audios</button>'
                 .'</div>';
               }

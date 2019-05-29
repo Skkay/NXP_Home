@@ -35,7 +35,7 @@ session_start();
 
               <div class="form-group">
                 <label>Nouveau code postal</label>
-                <input type="text" class="form-control" placeholder="Nouveau code postal" name="code-postal" required="true">
+                <input type="number" class="form-control" placeholder="Code postal" name="code_postal" required="true" min="10000" max="9999999">
               </div>
               <br>
               <button type="submit" class="btn btn-primary btn-lg btn-block">Valider</button>

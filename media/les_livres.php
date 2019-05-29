@@ -38,18 +38,18 @@
             // Connexion à la BDD
             try {
               ChromePhp::log("Connexion BDD");
-              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
             }
             catch (Excpetion $e) {
               die("Erreur : " . $e -> getMessage());
               ChromePhp::log("Connexion BDD : error");
             }
 
-            $bdd_livres = $bdd->query("SELECT idOuvrageLivre, nomOuvrageLivre FROM ouvragelivre ORDER BY nomOuvrageLivre");
+            $bdd_livres = $bdd->query("SELECT id_livre, titre_livre FROM livre ORDER BY titre_livre");
 
             if ($bdd_livres->rowCount() > 0) {
               while($row = $bdd_livres->fetch()) {
-                echo '<a href="#'.$row["idOuvrageLivre"].'" class="list-group-item" data-toggle="tab">'.$row["nomOuvrageLivre"].'</a>';
+                echo '<a href="#'.$row["id_livre"].'" class="list-group-item" data-toggle="tab">'.$row["titre_livre"].'</a>';
               }
             }
             else {
@@ -73,15 +73,15 @@
             </div>
 
             <?php
-            $bdd_videos = $bdd->query("SELECT idOuvrageLivre, nomOuvrageLivre, editionOriginaleOuvrageLivre, nbPageOuvrageLivre FROM ouvragelivre");
+            $bdd_videos = $bdd->query("SELECT id_livre, titre_livre, edition_livre, nb_page_livre FROM livre");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
                 echo '
-                <div class="tab-pane" id="'.$row["idOuvrageLivre"].'">'
-	                .'<h3>'.$row["nomOuvrageLivre"].'</h3><br>'	                
-	                .'<b><u>Edition</u> : </b>'.$row["editionOriginaleOuvrageLivre"].'<br>'
-	                .'<b><u>Pages</u> : </b>'.$row["nbPageOuvrageLivre"].'<br><br>'
+                <div class="tab-pane" id="'.$row["id_livre"].'">'
+	                .'<h3>'.$row["titre_livre"].'</h3><br>'	                
+	                .'<b><u>Edition</u> : </b>'.$row["edition_livre"].'<br>'
+	                .'<b><u>Pages</u> : </b>'.$row["nb_page_livre"].'<br><br>'
 	                .'<button type="submit" class="btn btn-primary">Ajouter à mes livres</button>'
                 .'</div>';
               }

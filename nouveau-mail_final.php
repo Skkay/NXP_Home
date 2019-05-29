@@ -7,7 +7,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -19,11 +19,11 @@ $valide_email = true;
 
 $req = $bdd->prepare("
 	SELECT
-	idUtilisateur,
-	adresseMailUtilisateur
+	id_utilisateur,
+	adresse_mail_utilisateur
 	FROM utilisateur
 	WHERE
-	idUtilisateur = :id_user
+	id_utilisateur = :id_user
 ");
 
 $req->execute(array(
@@ -36,7 +36,7 @@ ChromePhp::log($resultat);
 // VERIFICATION SI EXISTE DEJA :
 // Email
 ChromePhp::log("VERIFICATION EMAIL");
-$bdd_email = $bdd -> query("SELECT adresseMailUtilisateur FROM utilisateur WHERE adresseMailUtilisateur LIKE '$mail'");
+$bdd_email = $bdd -> query("SELECT adresse_mail_utilisateur FROM utilisateur WHERE adresse_mail_utilisateur LIKE '$mail'");
 while($array_email = $bdd_email -> fetch()) {
 	$valide_email = false;
 	ChromePhp::warn("Email Existante");
@@ -58,8 +58,8 @@ else
 	{
 		$req = $bdd->prepare("
 			UPDATE utilisateur
-			SET adresseMailUtilisateur = :new_mail
-			WHERE idUtilisateur = :id_user
+			SET adresse_mail_utilisateur = :new_mail
+			WHERE id_utilisateur = :id_user
 		");
 		ChromePhp::log($bdd->errorInfo());
 

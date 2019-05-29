@@ -4,7 +4,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -36,7 +36,7 @@ if ($password != $confirm_password) {
 // VERIFICATION SI EXISTE DEJA
 // Pseudo
 ChromePhp::log("VERIFICATION PSEUDO");
-$bdd_pseudo = $bdd -> query("SELECT identifiantUtilisateur FROM utilisateur WHERE identifiantUtilisateur LIKE '$pseudo'");
+$bdd_pseudo = $bdd -> query("SELECT pseudo_utilisateur FROM utilisateur WHERE pseudo_utilisateur LIKE '$pseudo'");
 while($array_pseudo = $bdd_pseudo -> fetch()) {
 	$valide_pseudo = false;
 	ChromePhp::warn("Pseudo Existant");
@@ -53,7 +53,7 @@ echo "<br>";
 
 // Email
 ChromePhp::log("VERIFICATION EMAIL");
-$bdd_email = $bdd -> query("SELECT adresseMailUtilisateur FROM utilisateur WHERE adresseMailUtilisateur LIKE '$email'");
+$bdd_email = $bdd -> query("SELECT adresse_mail_utilisateur FROM utilisateur WHERE adresse_mail_utilisateur LIKE '$email'");
 while($array_email = $bdd_email -> fetch()) {
 	$valide_email = false;
 	ChromePhp::warn("Email Existante");
@@ -88,17 +88,17 @@ if ($valide_pseudo == true AND $valide_email == true AND $password == $confirm_p
 	ChromePhp::log("Ajout dans BDD");
 	$req = $bdd->prepare("
 		INSERT INTO utilisateur(
-		nomUtilisateur, 
-		prenomUtilisateur, 
-		dateNaissanceUtilisateur, 
-		motDePasseUtilisateur, 
-		adresseUtilisateur, 
-		identifiantUtilisateur, 
-		codePostalUtilisateur, 
-		villeUtilisateur, 
-		civilitéUtilisateur, 
-		dateInscriptionUtilisateur, 
-		adresseMailUtilisateur) 
+		nom_utilisateur, 
+		prenom_utilisateur, 
+		ddn_utilisateur, 
+		mdp_utilisateur, 
+		adresse_utilisateur, 
+		pseudo_utilisateur, 
+		code_postal_utilisateur, 
+		ville_utilisateur, 
+		sexe_utilisateur, 
+		date_inscription_utilisateur, 
+		adresse_mail_utilisateur) 
 		VALUES(
 		:nom, 
 		:prenom, 
@@ -124,7 +124,7 @@ if ($valide_pseudo == true AND $valide_email == true AND $password == $confirm_p
 		"code_postal" => $code_postal,
 		"ville" => $ville,
 		"civilite" => $civilite,
-		"dateInscription" => "",
+		"dateInscription" => date("Y-m-d"),
 		"email" => $email
 	));
 

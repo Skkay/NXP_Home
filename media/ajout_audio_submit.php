@@ -5,7 +5,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -21,7 +21,7 @@ $valide_titre = true;
 
 // VERIFICATION SI EXISTE DEJA
 ChromePhp::log("VERIFICATION TIRE");
-$bdd_titre = $bdd->query("SELECT titreOeuvreAudio FROM oeuvreaudio WHERE titreOeuvreAudio LIKE '$titre'");
+$bdd_titre = $bdd->query("SELECT titre_audio FROM audio WHERE titre_audio LIKE '$titre'");
 while($array_titre = $bdd_titre->fetch()) {
 	$valide_titre = false;
 	ChromePhp::warn("Titre Existant");
@@ -41,10 +41,10 @@ if ($valide_titre == false) {
 if ($valide_titre == true) {
 	ChromePhp::log("Ajout dans BDD");
 	$req = $bdd->prepare("
-		INSERT INTO oeuvreaudio(
-		titreOeuvreAudio,
-		dateSortieOeuvreAudio,
-		duréeOeuvreAudio)
+		INSERT INTO audio(
+		titre_audio,
+		date_sortie_audio,
+		duree_audio)
 		VALUES(
 		:titre,
 		:date_vo,

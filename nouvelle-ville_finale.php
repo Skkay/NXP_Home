@@ -7,7 +7,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -18,11 +18,11 @@ $ville = $_POST["ville"];
 
 $req = $bdd->prepare("
 	SELECT
-	idUtilisateur,
-	villeUtilisateur
+	id_utilisateur,
+	ville_utilisateur
 	FROM utilisateur
 	WHERE
-	idUtilisateur = :id_user
+	id_utilisateur = :id_user
 ");
 
 $req->execute(array(
@@ -42,8 +42,8 @@ else
 {
 	$req = $bdd->prepare("
 		UPDATE utilisateur
-		SET villeUtilisateur = :new_ville
-		WHERE idUtilisateur = :id_user
+		SET ville_utilisateur = :new_ville
+		WHERE id_utilisateur = :id_user
 	");
 	ChromePhp::log($bdd->errorInfo());
 

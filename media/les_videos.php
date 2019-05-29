@@ -38,18 +38,18 @@
             // Connexion à la BDD
             try {
               ChromePhp::log("Connexion BDD");
-              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+              $bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
             }
             catch (Excpetion $e) {
               die("Erreur : " . $e -> getMessage());
               ChromePhp::log("Connexion BDD : error");
             }
 
-            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo FROM oeuvrevideo ORDER BY titreOeuvreVideo");
+            $bdd_videos = $bdd->query("SELECT id_video, titre_video FROM video ORDER BY titre_video");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
-                echo '<a href="#'.$row["idOeuvreVideo"].'" class="list-group-item" data-toggle="tab">'.$row["titreOeuvreVideo"].'</a>';
+                echo '<a href="#'.$row["id_video"].'" class="list-group-item" data-toggle="tab">'.$row["titre_video"].'</a>';
               }
             }
             else {
@@ -83,23 +83,23 @@
               return sprintf("%02d:%02d:%02d", ($t/3600),($t/60%60), $t%60);
             }
 
-            $bdd_videos = $bdd->query("SELECT idOeuvreVideo, titreOeuvreVideo, titreVOOeuvreVideo, resumeOeuvreVideo, langueOeuvreVideo, dureeOeuvreVideo, dateSortieFROeuvreVideo, dateSortieVOOeuvreVideo FROM oeuvrevideo");
+            $bdd_videos = $bdd->query("SELECT id_video, titre_video, titre_video_vo, resume_video, langue_video, duree_video, date_sortie_video, date_sortie_video_vo FROM video");
 
             if ($bdd_videos->rowCount() > 0) {
               while($row = $bdd_videos->fetch()) {
 
-                $hhmmss = seconds_to_hhmmss($row["dureeOeuvreVideo"]);
+                $hhmmss = seconds_to_hhmmss($row["duree_video"]);
 
                 echo '
-                <div class="tab-pane" id="'.$row["idOeuvreVideo"].'">'
-	                .'<h3>'.$row["titreOeuvreVideo"].' ('.$row["titreVOOeuvreVideo"].') '.'</h3>'
-	                .$row["resumeOeuvreVideo"].'<br><br>'
-	                .'<b><u>Langue</u> : </b>'.$row["langueOeuvreVideo"].'<br>'
+                <div class="tab-pane" id="'.$row["id_video"].'">'
+	                .'<h3>'.$row["titre_video"].' ('.$row["titre_video_vo"].') '.'</h3>'
+	                .$row["resume_video"].'<br><br>'
+	                .'<b><u>Langue</u> : </b>'.$row["langue_video"].'<br>'
 	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
-	                .'<b><u>Date de sortie française</u> : </b>'.$row["dateSortieFROeuvreVideo"].'<br>'
-	                .'<b><u>Date de sortie originale</u> : </b>'.$row["dateSortieVOOeuvreVideo"].'<br><br>'
+	                .'<b><u>Date de sortie française</u> : </b>'.$row["date_sortie_video"].'<br>'
+	                .'<b><u>Date de sortie originale</u> : </b>'.$row["date_sortie_video_vo"].'<br><br>'
 	                //.'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'
-	                .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?id='.$row["idOeuvreVideo"].'\';">Ajouter à mes vidéos</button>'
+	                .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?id='.$row["id_video"].'\';">Ajouter à mes vidéos</button>'
                 .'</div>';
               }
             }

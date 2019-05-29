@@ -34,11 +34,11 @@
       <!-- DEBUT FORMULAIRE INSCRIPTION -->
       <form method="post" action="inscription_finale.php">
 
-        <!-- Identifiant / Email -->
+        <!-- Pseudo / Email -->
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label>Identifiant *</label>
-            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo" required="true">
+            <label>Pseudo *</label>
+            <input type="text" class="form-control" placeholder="Pseudo" name="pseudo" required="true">
           </div>
           <div class="form-group col-md-6">
             <label>Email *</label>

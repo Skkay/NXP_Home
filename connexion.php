@@ -35,8 +35,8 @@
 
 
           <div class="form-group">
-            <label>Identifiant *</label>
-            <input type="text" class="form-control" placeholder="Identifiant" name="pseudo" required="true">
+            <label>Pseudo *</label>
+            <input type="text" class="form-control" placeholder="Pseudo" name="pseudo" required="true">
           </div>
         
 

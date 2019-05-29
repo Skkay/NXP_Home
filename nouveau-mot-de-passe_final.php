@@ -7,7 +7,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -20,11 +20,11 @@ $confirm_new_mdp = $_POST["confirm_new_password"];
 
 $req = $bdd->prepare("
 	SELECT
-	idUtilisateur,
-	motDePasseUtilisateur
+	id_utilisateur,
+	mdp_utilisateur
 	FROM utilisateur
 	WHERE
-	idUtilisateur = :id_user
+	id_utilisateur = :id_user
 ");
 
 $req->execute(array(
@@ -34,9 +34,9 @@ $req->execute(array(
 $resultat = $req->fetch();
 ChromePhp::log($resultat);
 
-$isPasswordCorrect = password_verify($_POST["password"], $resultat["motDePasseUtilisateur"]);
+$isPasswordCorrect = password_verify($_POST["password"], $resultat["mdp_utilisateur"]);
 //ChromePhp::log(password_hash($_POST["password"], PASSWORD_DEFAULT));
-//ChromePhp::log($resultat["motDePasseUtilisateur"]);
+//ChromePhp::log($resultat["mdp_utilisateur"]);
 ChromePhp::log("isPasswordCorrect : " . $isPasswordCorrect);
 
 if (!$resultat) {
@@ -48,8 +48,8 @@ else
 	{
 		$req = $bdd->prepare("
 			UPDATE utilisateur
-			SET motDePasseUtilisateur = :new_pass
-			WHERE idUtilisateur = :id_user
+			SET mdp_utilisateur = :new_pass
+			WHERE id_utilisateur = :id_user
 		");
 		ChromePhp::log($bdd->errorInfo());
 

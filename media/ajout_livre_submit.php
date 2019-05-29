@@ -5,7 +5,7 @@ ChromePhp::log('Hello console!');
 // Connexion à la BDD
 try {
 	ChromePhp::log("Connexion BDD");
-	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=nxp_home_2;charset=utf8', 'root', '');
 }
 catch (Excpetion $e) {
 	die("Erreur : " . $e -> getMessage());
@@ -21,7 +21,7 @@ $valide_titre = true;
 
 // VERIFICATION SI EXISTE DEJA
 ChromePhp::log("VERIFICATION TITRE");
-$bdd_titre = $bdd->query("SELECT nomOuvrageLivre FROM ouvragelivre WHERE nomOuvrageLivre LIKE '$titre'");
+$bdd_titre = $bdd->query("SELECT titre_livre FROM livre WHERE titre_livre LIKE '$titre'");
 while($array_titre = $bdd_titre->fetch()) {
 	$valide_titre = false;
 	ChromePhp::warn("Titre Existant");
@@ -41,10 +41,10 @@ if ($valide_titre == false) {
 if ($valide_titre == true) {
 	ChromePhp::log("Ajout dans BDD");
 	$req = $bdd->prepare("
-		INSERT INTO ouvragelivre(
-		nomOuvrageLivre,
-		editionOriginaleOuvrageLivre,
-		nbPageOuvrageLivre)
+		INSERT INTO livre(
+		titre_livre,
+		edition_livre,
+		nb_page_livre)
 		VALUES(
 		:titre,
 		:edition,
