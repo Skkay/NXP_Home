@@ -22,15 +22,20 @@ session_start();
     <div id="navbar" class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les médias<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
-            <li><a href="/NXP_Home/media/les_audios.php">Les audios</a></li>
-            <li><a href="/NXP_Home/media/les_livres.php">Les livres</a></li>
-          </ul>
-        </li>
-        <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un média</a></li>
+        <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) 
+          { ?>
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Les médias<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/NXP_Home/media/les_videos.php">Les vidéos</a></li>
+              <li><a href="/NXP_Home/media/les_audios.php">Les audios</a></li>
+              <li><a href="/NXP_Home/media/les_livres.php">Les livres</a></li>
+            </ul>
+          </li>
+          <li><a href="/NXP_Home/media/ajout_media.php">Ajouter un média</a></li>
+          
+        <?php } ?>
         
 
       </ul>

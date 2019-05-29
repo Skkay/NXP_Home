@@ -38,7 +38,8 @@
 
 <body>
 	<?php include("../static/navigation_bar.php"); ?>
-
+	<?php if (!(isset($_SESSION['id']) AND isset($_SESSION['pseudo']))) { echo "<script>window.location = '../connexion.php'</script>"; } ?>
+	
 	<div class="container">
 
 		<div class="jumbotron">
