@@ -1,7 +1,9 @@
 <?php
+/*
 echo($_GET["type"]."<br>");
 echo($_GET["id"]."<br>");
 echo($_GET["url"]."<br>");
+*/
 
 session_start();
 include("../chromephp-master/ChromePhp.php"); 
@@ -59,5 +61,12 @@ if ($valide_id == true) {
 		"url_".$type."" => $url
 	)) or die(print_r($req->reqInfo(), TRUE));
 	ChromePhp::log("Ajout dans BDD réussi");
+
+	echo "<script>window.location = '../les_".$type."s.php'</script>";
 }
+else {
+	include("_ajout_media_failed.php");
+}
+
+//echo "<script>window.location = 'les_videos.php'</script>";
 ?>
