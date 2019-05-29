@@ -82,7 +82,12 @@
 	                .'<h3>'.$row["titre_livre"].'</h3><br>'	                
 	                .'<b><u>Edition</u> : </b>'.$row["edition_livre"].'<br>'
 	                .'<b><u>Pages</u> : </b>'.$row["nb_page_livre"].'<br><br>'
-	                .'<button type="submit" class="btn btn-primary">Ajouter à mes livres</button>'
+	                .'<div class="input-group">'
+                    .'<input type="text" id="url_'.$row["id_livre"].'" class="form-control" placeholder="URL" name="url" required="false">'
+                    .'<span class="input-group-btn">'
+                      .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?type=livre&id='.$row["id_livre"].'&url=\' + document.getElementById(\'url_'.$row["id_livre"].'\').value;">Ajouter à mes vidéos</button>'
+                    .'</span>'
+                  .'</div>'
                 .'</div>';
               }
             }

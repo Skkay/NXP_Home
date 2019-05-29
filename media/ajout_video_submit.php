@@ -28,6 +28,7 @@ $valide_titre_vo = true;
 // Titre
 ChromePhp::log("VERIFICATION TITRE");
 $bdd_titre = $bdd->query("SELECT titre_video FROM video WHERE titre_video LIKE '$titre'");
+ChromePhp::log($bdd_titre);
 while($array_titre = $bdd_titre->fetch()) {
 	$valide_titre = false;
 	ChromePhp::warn("Titre Existant");

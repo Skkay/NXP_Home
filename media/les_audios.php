@@ -90,7 +90,12 @@
 	                .'<h3>'.$row["titre_audio"].'</h3><br><br>'
 	                .'<b><u>Durée</u> : </b>'.$hhmmss.'<br>'
 	                .'<b><u>Date de sortie</u> : </b>'.$row["date_sortie_audio"].'<br><br>'
-	                .'<button type="submit" class="btn btn-primary">Ajouter à mes audios</button>'
+	                .'<div class="input-group">'
+                    .'<input type="text" id="url_'.$row["id_audio"].'" class="form-control" placeholder="URL" name="url" required="false">'
+                    .'<span class="input-group-btn">'
+                      .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?type=audio&id='.$row["id_audio"].'&url=\' + document.getElementById(\'url_'.$row["id_audio"].'\').value;">Ajouter à mes vidéos</button>'
+                    .'</span>'
+                  .'</div>'
                 .'</div>';
               }
             }

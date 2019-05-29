@@ -99,7 +99,13 @@
 	                .'<b><u>Date de sortie française</u> : </b>'.$row["date_sortie_video"].'<br>'
 	                .'<b><u>Date de sortie originale</u> : </b>'.$row["date_sortie_video_vo"].'<br><br>'
 	                //.'<button type="submit" class="btn btn-primary">Ajouter à mes vidéos</button>'
-	                .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?id='.$row["id_video"].'\';">Ajouter à mes vidéos</button>'
+	                //.'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?type=video&id='.$row["id_video"].'\';">Ajouter à mes vidéos</button>'
+                  .'<div class="input-group">'
+                    .'<input type="text" id="url_'.$row["id_video"].'" class="form-control" placeholder="URL" name="url" required="false">'
+                    .'<span class="input-group-btn">'
+                      .'<button type="submit" class="btn btn-primary" onclick="window.location.href = \'ajouter_a_mes_medias.php/?type=video&id='.$row["id_video"].'&url=\' + document.getElementById(\'url_'.$row["id_video"].'\').value;">Ajouter à mes vidéos</button>'
+                    .'</span>'
+                  .'</div>'
                 .'</div>';
               }
             }
